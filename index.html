@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21102f">
+<meta name="description" content="Explore the fine art and digital art of Dinesh Kumar. A portfolio of visual expression, color and imagination.">
+<title>Dinesh Kumar — Fine Art & Digital Artist</title>
+<style>
+:root{
+  --ink:#21102f;--deep:#180d23;--purple:#7041a0;--violet:#a77ad1;
+  --lav:#e9dcf4;--paper:#f8f5f1;--muted:#776d7d;--line:rgba(42,22,55,.14);
+  --serif:Georgia,"Times New Roman",serif;--sans:Inter,Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(1160px,calc(100% - 56px));margin:auto}
+header{height:88px;display:flex;align-items:center;position:absolute;z-index:5;top:0;left:0;right:0;color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.brand img{width:42px;height:42px;object-fit:cover;border-radius:50%;}
+.navlinks{display:flex;align-items:center;gap:34px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.navlinks a{opacity:.8;transition:opacity .2s}
+.navlinks a:hover{opacity:1}
+.navlinks .contact-link{border:1px solid rgba(255,255,255,.5);padding:12px 19px;border-radius:2px}
+.menu-toggle{display:none;background:none;color:white;border:0;font-size:25px}
+.hero{min-height:760px;background:
+ radial-gradient(ellipse at 75% 45%,rgba(142,91,181,.42),transparent 35%),
+ radial-gradient(ellipse at 15% 90%,rgba(91,47,119,.35),transparent 40%),
+ linear-gradient(120deg,#21102f 0%,#321746 54%,#1b1027 100%);
+ color:white;display:flex;align-items:center;position:relative;overflow:hidden;padding:140px 0 90px}
+.hero:before{content:"";position:absolute;width:570px;height:570px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-110px;top:120px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+.hero:after{content:"";position:absolute;width:1px;height:230px;background:linear-gradient(transparent,rgba(255,255,255,.35),transparent);left:58%;top:20%}
+.hero-inner{position:relative;z-index:1;max-width:760px}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c7a8e1;display:flex;align-items:center;gap:13px}
+.eyebrow:before{content:"";width:32px;height:1px;background:#c7a8e1}
+h1{font-family:var(--serif);font-size:clamp(64px,9vw,118px);line-height:.94;font-weight:400;letter-spacing:-.055em;margin:30px 0 26px}
+h1 em{font-weight:400;color:#cba9e7}
+.hero-copy{font-size:16px;line-height:1.8;color:rgba(255,255,255,.72);max-width:475px}
+.hero-actions{display:flex;gap:15px;align-items:center;margin-top:38px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 23px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:.25s;border:1px solid transparent}
+.btn-light{background:#f6effb;color:#281438}
+.btn-light:hover{background:#d9c1eb;transform:translateY(-2px)}
+.btn-outline{border-color:rgba(255,255,255,.35);color:white}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+.hero-note{position:absolute;z-index:1;right:0;bottom:66px;color:rgba(255,255,255,.48);font-family:var(--serif);font-style:italic;font-size:14px;writing-mode:vertical-rl;letter-spacing:.08em}
+.section{padding:112px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}
+.kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--purple);font-weight:700}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(42px,5vw,65px);line-height:1.02;letter-spacing:-.04em;margin:14px 0 0}
+.section-intro{max-width:340px;color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+.work{background:#f8f5f1}
+.gallery{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:22px}
+.art-card{min-width:0}
+.artwork{height:340px;position:relative;overflow:hidden;background:#d9c9e4}
+.art-card:nth-child(2) .artwork{height:420px;margin-top:65px}
+.art-card:nth-child(3) .artwork{height:300px;margin-top:20px}
+.artwork svg{width:100%;height:100%;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.art-card:hover .artwork svg{transform:scale(1.045)}
+.art-caption{display:flex;justify-content:space-between;align-items:start;padding:17px 0 0;gap:12px}
+.art-caption h3{font-family:var(--serif);font-size:22px;font-weight:400;margin:0 0 6px}
+.art-caption p{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:0}
+.art-no{font-family:var(--serif);font-style:italic;color:#a18aa9;font-size:17px}
+.about{background:#eee6f3}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.about-visual{height:510px;position:relative;background:#2a153a;overflow:hidden}
+.about-visual:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#d5b5e9,#8655a8 48%,#442451 72%);top:80px;left:50%;transform:translateX(-50%);filter:blur(.2px)}
+.about-visual:after{content:"";position:absolute;inset:25px;border:1px solid rgba(255,255,255,.2)}
+.about-mark{position:absolute;z-index:1;bottom:42px;left:40px;color:white;font-family:var(--serif);font-size:32px;font-style:italic}
+.about-copy p{color:#65596d;font-size:14px;line-height:2;margin:24px 0}
+.about-meta{display:flex;gap:30px;margin-top:34px;padding-top:25px;border-top:1px solid rgba(42,22,55,.16)}
+.meta-item strong{display:block;font-family:var(--serif);font-size:23px;font-weight:400}
+.meta-item span{display:block;color:var(--muted);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+.process{background:#21102f;color:#fff}
+.process .kicker{color:#c6a1e1}
+.process .section-intro{color:rgba(255,255,255,.56)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.2);margin-top:58px}
+.process-item{padding:30px 30px 10px 0;border-right:1px solid rgba(255,255,255,.18);margin-right:30px}
+.process-item:last-child{border:0;margin:0}
+.process-num{font-family:var(--serif);font-style:italic;color:#b98bd7;font-size:18px}
+.process-item h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:22px 0 12px}
+.process-item p{color:rgba(255,255,255,.58);font-size:12px;line-height:1.9;max-width:260px}
+.contact{background:#f8f5f1;text-align:center;padding:120px 0}
+.contact h2{max-width:720px;margin:16px auto 22px}
+.contact p{color:var(--muted);font-size:14px;line-height:1.8;max-width:450px;margin:0 auto 32px}
+.contact .btn{background:var(--purple);color:white}
+.contact .btn:hover{background:#4e2b70;transform:translateY(-2px)}
+footer{background:#180d23;color:white;padding:28px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-brand{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.footer-brand img{width:30px;height:30px;border-radius:50%;background:white}
+footer small{font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.05em}
+.social{font-size:11px;letter-spacing:.13em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:5px}
+@media(max-width:800px){
+ .hero{min-height:690px}.hero-note{right:12px}
+ .gallery{grid-template-columns:1fr 1fr;gap:28px 18px}
+ .art-card:nth-child(2) .artwork,.art-card:nth-child(3) .artwork{height:310px;margin-top:0}
+ .art-card:last-child{grid-column:1/-1;width:calc(50% - 9px)}
+ .about-grid{gap:45px}
+}
+@media(max-width:600px){
+ .wrap{width:min(100% - 38px,480px)}
+ header{height:72px}.brand{font-size:11px}.brand img{width:36px;height:36px}
+ .menu-toggle{display:block}.navlinks{display:none;position:absolute;top:65px;left:19px;right:19px;background:#241333;padding:24px;flex-direction:column;align-items:stretch;gap:22px}
+ .navlinks.open{display:flex}.navlinks .contact-link{text-align:center}
+ .hero{min-height:690px;padding:120px 0 90px}.hero:before{width:380px;height:380px;right:-230px;top:180px}
+ h1{font-size:clamp(61px,17vw,88px)}.hero-copy{font-size:14px;max-width:340px}
+ .hero-note{display:none}.section{padding:78px 0}
+ .section-head{display:block;margin-bottom:32px}.section-intro{margin-top:18px}
+ .gallery{grid-template-columns:1fr;gap:30px}
+ .artwork,.art-card:nth-child(2) .artwork,.art-card:nth-child(3) .artwork{height:340px;margin:0}
+ .art-card:last-child{grid-column:auto;width:auto}
+ .about-grid{grid-template-columns:1fr;gap:35px}.about-visual{height:390px}
+ .about-visual:before{width:270px;height:270px;top:60px}
+ .process-grid{grid-template-columns:1fr;margin-top:38px}
+ .process-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.18);margin:0;padding:25px 0}
+ .process-item h3{margin:12px 0 8px}
+ .contact{padding:85px 0}
+ .footer-inner{flex-wrap:wrap}.footer-inner small{order:3;width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav" style="padding: 0 15px;">
+  <a class="brand" href="#home" aria-label="Dinesh Kumar home">
+   <img src="img/logodka.png" style="overflow:visible" alt="Dinesh Kumar art logo">
+   <span>Dinesh Kumar</span>
+  </a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="navlinks" aria-label="Main navigation">
+   <a href="#work">Selected work</a><a href="#about">The artist</a><a href="#process">Practice</a><a class="contact-link" href="#contact">Get in touch ↗</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="wrap">
+  <div class="hero-inner">
+   <div class="eyebrow">Fine art · Digital art</div>
+   <h1>Art is a way<br>of <em>seeing.</em></h1>
+   <p class="hero-copy">A visual journey through color, form and imagination. Discover the creative world of Dinesh Kumar — where fine art meets the possibilities of digital expression.</p>
+   <div class="hero-actions">
+    <a class="btn btn-light" href="#work">Explore the work <span>↘</span></a>
+    <a class="btn btn-outline" href="https://www.instagram.com/dineshkumarart/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+   </div>
+  </div>
+ </div>
+ <div class="hero-note">A practice in visual expression</div>
+</section>
+
+<section class="section work" id="work">
+ <div class="wrap">
+  <div class="section-head">
+   <div><div class="kicker">01 / Selected work</div><h2>Art in many<br>dimensions.</h2></div>
+   <p class="section-intro">A meeting place for traditional sensibility and contemporary digital exploration. A selection of visual directions from the artist's world.</p>
+  </div>
+  <!-- Replace the illustrative SVG artwork below with images of the artist's actual work. -->
+  <div class="gallery">
+   <article class="art-card">
+    <div class="artwork">
+     <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract watercolor-inspired composition">
+      <defs><linearGradient id="wash1" x2="1" y2="1"><stop stop-color="#e7c8b9"/><stop offset="1" stop-color="#9d719d"/></linearGradient><filter id="blur1"><feGaussianBlur stdDeviation="17"/></filter></defs>
+      <rect width="500" height="620" fill="#e7d9ce"/><path d="M-20 350 Q80 80 250 220 T530 180 L520 650H-20Z" fill="url(#wash1)" opacity=".85"/>
+      <g filter="url(#blur1)" opacity=".7"><circle cx="170" cy="245" r="115" fill="#bd83a1"/><circle cx="330" cy="370" r="130" fill="#785b91"/><circle cx="260" cy="150" r="70" fill="#f5d6ae"/></g>
+      <path d="M40 500 Q150 300 250 420 T470 340" fill="none" stroke="#543c65" stroke-width="3" opacity=".55"/>
+      <path d="M100 90 Q220 180 180 340 T340 540" fill="none" stroke="#fff5e8" stroke-width="2" opacity=".8"/>
+      <circle cx="360" cy="145" r="34" fill="none" stroke="#fff5e8" stroke-width="2"/>
+     </svg>
+    </div>
+    <div class="art-caption"><div><h3>Quiet gestures</h3><p>Watercolor-inspired study</p></div><span class="art-no">01</span></div>
+   </article>
+   <article class="art-card">
+    <div class="artwork">
+     <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract digital composition with geometric forms">
+      <defs><linearGradient id="grad2" x2="1" y2="1"><stop stop-color="#28163d"/><stop offset="1" stop-color="#8052a2"/></linearGradient><linearGradient id="orb2"><stop stop-color="#f2c6d6"/><stop offset="1" stop-color="#b17bc8"/></linearGradient></defs>
+      <rect width="500" height="620" fill="url(#grad2)"/>
+      <circle cx="250" cy="280" r="165" fill="none" stroke="#e5c9ef" stroke-width="1" opacity=".45"/>
+      <circle cx="250" cy="280" r="125" fill="url(#orb2)"/>
+      <path d="M0 470 L180 180 L310 500 L500 150 V620 H0Z" fill="#24142f" opacity=".65"/>
+      <path d="M40 0 L410 620 M-40 170 L490 430" stroke="#e9d8ef" stroke-width="1" opacity=".35"/>
+      <circle cx="250" cy="280" r="55" fill="#f3e1e8" opacity=".65"/>
+      <path d="M250 100 C390 180 390 380 250 460 C110 380 110 180 250 100Z" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+     </svg>
+    </div>
+    <div class="art-caption"><div><h3>Other worlds</h3><p>Digital composition</p></div><span class="art-no">02</span></div>
+   </article>
+   <article class="art-card">
+    <div class="artwork">
+     <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract botanical-inspired artwork">
+      <rect width="500" height="620" fill="#d8d4c6"/>
+      <path d="M0 430 Q140 330 260 450 T520 360 V620 H0Z" fill="#6e6c73"/>
+      <path d="M245 620 C240 450 270 280 200 80" fill="none" stroke="#394c42" stroke-width="8"/>
+      <g fill="#778e77" stroke="#415b4b" stroke-width="2">
+       <path d="M230 360 C60 340 70 190 220 240 Q270 290 230 360Z"/>
+       <path d="M230 290 C350 260 390 130 270 150 Q220 200 230 290Z"/>
+       <path d="M245 440 C380 420 430 300 300 310 Q250 350 245 440Z"/>
+       <path d="M215 500 C80 480 60 390 180 395 Q230 420 215 500Z"/>
+      </g>
+      <path d="M230 360 L110 255 M230 290 L330 190 M245 440 L365 345 M215 500 L130 445" stroke="#d4dfc8" stroke-width="2" fill="none"/>
+      <circle cx="200" cy="90" r="38" fill="#d6a76f" opacity=".8"/>
+     </svg>
+    </div>
+    <div class="art-caption"><div><h3>Nature, reimagined</h3><p>Color & form study</p></div><span class="art-no">03</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section about" id="about">
+ <div class="wrap about-grid">
+  <div class="about-visual"><div class="about-mark">The art of looking closer.</div></div>
+  <div class="about-copy">
+   <div class="kicker">02 / The artist</div>
+   <h2>Between the<br>hand & the pixel.</h2>
+   <p>Dinesh Kumar is a fine and digital artist exploring the language of visual expression. Working across artistic mediums, his practice celebrates the relationship between observation, imagination, texture and color.</p>
+   <p>From the tactile character of traditional art to the open-ended possibilities of digital creation, each medium offers a different way to tell a visual story.</p>
+   <div class="about-meta">
+    <div class="meta-item"><strong>Fine art</strong><span>Traditional expression</span></div>
+    <div class="meta-item"><strong>Digital</strong><span>Contemporary exploration</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section process" id="process">
+ <div class="wrap">
+  <div class="section-head">
+   <div><div class="kicker">03 / Creative practice</div><h2>Different tools.<br>One curiosity.</h2></div>
+   <p class="section-intro">Every medium brings its own character. The process is an ongoing exploration of how ideas become images.</p>
+  </div>
+  <div class="process-grid">
+   <article class="process-item"><span class="process-num">01</span><h3>Observe</h3><p>Finding inspiration in the details, patterns, colors and moments that often go unnoticed.</p></article>
+   <article class="process-item"><span class="process-num">02</span><h3>Experiment</h3><p>Exploring materials, techniques and digital tools to discover unexpected visual directions.</p></article>
+   <article class="process-item"><span class="process-num">03</span><h3>Express</h3><p>Bringing ideas together into images that invite a closer look and a personal connection.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="kicker">04 / Start a conversation</div>
+  <h2>Have an idea in mind?</h2>
+  <p>For collaborations, commissions, creative projects or simply to say hello — get in touch and let's start a conversation.</p>
+  <a class="btn" href="https://www.instagram.com/dineshkumarart/" target="_blank" rel="noopener noreferrer">Connect on Instagram <span>↗</span></a>
+ </div>
+</section>
+</main>
+<footer>
+ <div class="wrap footer-inner">
+  <a class="footer-brand" href="#home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATIAAAEyCAYAAAB5xlzFAAAAAXNSR0IArs4c6QAAABB0RVh0VGl0bGUAVW50aXRsZWQtMZXv2d8AAAAidEVYdENyZWF0aW9uIFRpbWUAMjAyNi0xMS0xNVQxODo1MzoxMVpLG64xAAAACXBIWXMAAAsTAAALEwEAmpwYAAAOnElEQVR4nO3d3XHcRhYG0LZ2A6AjWCoCURGYjkD0m98sRbB2BCtFoHUEkiOQHIGkCERFIO6b38gMtNWuhjxDz5AYDID+O6cKRY+rRIIYzMd7G43GNyGELwGgYg9y7wDAsQQZUL1/3nr9Tab9IK/TW9ujEMJJCOG8sDfmfQjhJoTwKYRwdWujP182g2tzjEyQtS+G01kKq9MCw+qYkLtKIXeZXtM2QdaJsxRUj9J/x60nl2n7lIIt/jftEGSNOk/bdym0YnvIX25SmH1IwaZqq5sga6zietJQi7i2GGa/q9iq9OX2i2GjfDGwXoYQPt9672zHH4PP6dj6o1CHr++dwf7yxfbwIrWL8at2cb029G1qQ9+m15RFRVaBGFqvVFrFVJqv0ntCOba6Sa1lWWNe2sY62s/ergCXSJAVJLaKP4cQPhbwIbUddgw+pvdOu5+HICtA/IuudWwnPON7qUpblyDL6GkI4V0BHzzbMsfgXXqPWZ4gW1lsPZ6bMtHdWFp8z7WdyxFkKwfYdQEfLFueYxDfe4G2DEG2sHgztgATnrsCLZ4bzEOQLSSepAbwBdh9VVo8RwTa8QTZAi2kABNgh7ad8ZwxhjadIJuRFlKAzTGGhiDLIl5id+O2EJvzKqdpG4dRkR0hroxgHpgAW+oqZzy3rL4hyBZjHEx4rTltw/jZ/VRkB4r305kLJshyjJ/Fcw9BdpR4iVwbKcBKaDdN11CRTfK8gBPY5hhsngOubm7TWt4hrmBgSR0BUuofkXhuWmVDkKnCCvgw2o4/BqqzjeNhzf6/xsLe+EtHZeKj7X7o+EnrMcT+9CDvfhQhTkJUrlPzMIiJtLcHzDqbFxarMG2OY9DCOfCmw/s2u28tz9Ib75I2LblKrWZsOXvQdWs5tJJCjNac9txq9tRaWmonfwtkW+cYxHO9dd21lidpdrT5N/QktpjfN/yU9K5ay7O0RIoQozfdnPsPOhkP6+1qDgxOehg3aznIXnUyTgCh989Dq0H2qvW/QDDB01bDrLXB/mGSqxU2Yb/3ab5Z7RcBvrQYZK5MQl9XNJu7ahmvypheAZ1+ZlqoyIY3xJVJONxNqsxqvK2pmYpMiMFxmhiSqTnIhBjMo/owqzXIhBjMq+owqzHIhBgso9owqy3IhBgsq8owqynIhBiso7owq2X6xbBgnCkWsO7UjMcFP9ykqukXw21HQgx89nYqPciqK3GhMVUM6ZQeZC+FGBQRZvGzWKySg8xSPFCOopcAKjXI4uPgrScGZXmaPpvFKfGq5UUa3AfKFNcye5t7J0pej6yKgUXoXCkrZhQ5/eIk9eBCDMpW3Ge1pCCLB8Y0C6jDWUmD/6UE2fM0NgbU46KUwf8SxsiKvqwL3OtZCOF1z4P97qGE+uW6J7OYwX73UEL9hvuhs8kZZLG3NrgPbTjLOV6Wq7U8T/PFgLZ8nx4A3PwY2UlaWyyOjwFtuUrjZTetj5HFK5RCDNp0mmMWwoMMUy3MF4O2Xay96MOarWVsKT+XdFsDsJjYWj5cuMXM0loWdW8WsMr9mKt4sGKpqaWEvqz2uV+jtdRSQr+WbDFXbS3/o6WEbp2kDKi6IjPxFVhqouxqE2LjVUpzxoCr1GJW11r+LMSA5DRlwiKWqsgM8ANLD/wvXpEZ4AdWG/hfoiI7TWNjALs8nGkRxkUrMstWA6tmxIMFplvEDWC1nJi7tTTdAlhrOsYirWVctsOcMWCM0zmX+pmzIlONAWtWZbNXZKoxIFtVNldFphoD1q7KZq3IVGNA1qpsjopMNQbkqMpmq8hUY0D2quzYIPvpyH8PcHSWHBNkZvEDczkqT44JMtUYMKef1h7st8IFkHtljKMH+1d9ijDQjadrVmTXnowELCCuHvvtGhVZTExPDAeWcDKlKptSkX0MIZwd+oMARroMITxe8nFwBvmBUgb9J7eW/562TwDLZc2hFZn7KoFS7r+cVJFdWAEWWMlpypxRDgmyJ9P2B2CSJ3O3lp4cDpT2ZPKDW8tY4pk7BqzpZGx7OTbItJVADk/mai1P0i1JADl8u6e9PKi19ORwIKd7M2hMkGkrgZyezNFaWukCKHFFjNGtZSzpXK0Ecjq5r728L8i0lUAJnhzTWrq3Eij13stRreVp2gByuzOP7goy0y6AkpxPCbLvltkXgEn2ZpKKDGi2IjM+BpRmby7tCzLjY0CJzg8JMuNjQIl2ZpOKDKi+Its1IdayPUANy/rcOSHWw3eBkv0to3YFmYF+oGTnY4Ls0Tr7AjDJ3zJKawlU31ruGuzffA1Qoq2sul2RGR8DarCVVbeDzBVLoAZndwXZv9bdF4BJtrJKRQY0V5FZERaowVZWuUoJVG/MA3oBiibIgOoJMqB6ggyoniADqifIgOoJMqB6ggyoniADqifIgOoJMqB6ggyoniADqvePEMLz3DtRg4uLi/Djjz+Gm5ub8Mcff+TeHWCDZXxGur6+DicnJ+Hy8jI8fvzYSQQF0VqOdHV1tfUVKIeKbKRYjZ2dnf1ZkcX2EiiHIAOqp7UEqifIgOoJMqB6ggyoniADqifIgOoJMqB6ggyoniADqifIgOoJMqB6ggyoniADqifIgOoJMqB6ggyoniADqifIgOoJMqB6ggyoniADqifIgOoJMqB6ggxoLsiuMu0HwCG2skqQAc0F2eW6+wIwyeVdQfY/BxWowFZWqciA6iuyb0IIXzZefxtCuF5/nwAOspVVtyuyG1cugQoG+mNW3TmPzIA/ULK/ZdSuIPu0zr4ATPJpTJC9d3CBgr0fE2Rm9wMluxobZMIMKNHOfNp307j2EijRzmzaF2Qflt0XgEl2ZpOKDGi2IjNOBpRmby7dtbCiibFASfZm0l1BZpwMKMmHKUHmyiVQkr2ZdHv1i/h60+cQwuly+wUwShwbe3jr/30Z+/CRtw4yUIA7s+i+IDNOBpTgziy6r7UMafGyk/n3C2CUm7SQYpjaWkYG/YGc7s2gMUH2+zz7AjDJvRk0prWMbaV1/IFcvr29tPWU1jJ+A+0lkMP7PSG2ZUyQRb8dvz8ABxuVPWNay0h7CZTUVh7cWob0jV7Ps18Ao7we01YeEmSRq5fAmkZnztjWcmByLJBzEuxRreVAewms4aCsOTTIXL0E1vDbkkEWV2i0ciywpINz5tAgi36d8G8AFsuYQwf7hzllccFFK2IASwzyPxw57WLyYP/wgwz6A1nnjh1bkYW0/HWsygDm9HDfI9/mrshC+kGWwQbm9PaAENsyNcgig/7AnCZnytTWcuApS8BST0lavLUcvDjy3wMcnSXHVmSRqgxYuxqbtSKLVGVA1gyZoyKLVGXAmtXY7BVZpCoDsmXHXBVZpCoD1qrGFqnIIlUZkCUz5qzIIlUZsEY1tlhFFv0y8/cD2jRrVsxdkUXvQgjnM3wfoN2H7n4/w/f5smSQnYUQPs7wfYA2PZ5ppenFWsuQdtB6ZcAur5dYLn+JimxYryxWZVaRBQY3qRqbtFTP2hVZSDtqmR9g068zhtgqFVlI1djHVJ0BfbtK1djBy1jnrMhC2mHTMYCQsmDOENuyZJANS9daEhv6tngOLNlaDjw+Dvp1yOPdimwtB1pM6NeiLeWaFdnAjH/oy1wz+LPM7N/H3DLox9xzxrK3loP4C1nqB/rwYuEQ27JmRTbQYkLblm4ps7aWA1cxoV1LXqUsorUcxF/wWYafCyzv2UohtiVHkIU0Oe6/mX42sIz/5poAn6O13Gwx36X1y4C6XaZxsTWrsaxjZJsswghtmGuxxGrGyDbFX9x4GdTtWYYQ25I7yIYVI60oC3Uq4vObu7XcFNcuM14G9bhMLWUuxYyRbTK/DOqx5nyx4sfINt2sNBsYON7aVyjvVFKQRQb/oXzZB/dLD7JiBg+Bej6fJQbZkPjFHSzo3OtSp0uVNNi/iyuZUIbcVyirGezfN6BYVC8OHd9+VKzSK7LItAzoe5pF9RXZ5rSMEg8ktKyaz14NQZbrznro2U1NQzu1BFkkzGAdVYVYbUEWCTNYVnUhVmOQRcIMllFliNUaZJEwg3lVG2I1B1kkzGAeVYdY7UEWCTPoPMRaCLJImEHHIdZKkG2GWfVvCKykqc9MDbcoHcIj5qCfLqaqW5SmlMrvc+8IFOp9IyG2pbUg2wwz65nBttcthlirQTaIC8C9yL0TUIgXpS6KOIfWxsh2uQghvErjZ9CbmxRgb0N7mh0j2+VtS1dnYMKgfoshtjPVhq1lsSJ7c+v3tTkGrZ4DbzroQrayq5cgGzwv4CSzOQZLngPxHO9B10E2jJtd+zAJ1MbOget0bvfi6+/ew2D/fa3mee4dgZnmh/3Q4tSKO3Q12H/ffLNfcu8IHOmXVueHHaLH1vK2s/QMzdytgc0xOOQc6P25r92Pke1rNeN8M2HiGNRwDpgbKcjuFMfMPhdwotocg13nQDw3jeuqyEZXZy99kIRpYefAyw7mhh1CazlS/Mtn7Cz/B7j3LZ6DqjBBdjSTaPN/mHvdepncOsXmcdp+wV6nIYR3BZzYtj6Owbt0ziHIFuFiQP4PecubwfzxNo/b9gtG+9ltTtk/9K3dXhTPKQTZ6lzdzB8ALWyuRk6zeQy3XzBJHMswmTZ/INS2xXPGONh0gmwhAi1/ONSwCbB5CLKFCbT8YVHiJsDmJchWItDyh0cJmwBbhiDLEGhxQNdijv1s1+k9Nwa2HEGW8SrnUzelNz8PLL7H7olcniArZGKtOwXa2eJ76X7IdQmyAttOSwfVWX1pH/MRZIU/TNhYWrnbdXqPenrIR6kEWSVjaVrPslpHY19l+fr+9PwUpZpaz/jX/ztVwOriE7o/pK9X6/947vE1uwRZfZXaZqi5Mjavm1vh1fVTiSogyBoxhNp550/TOcZleibkEF7UQ5A16CQFmmAbH1zxq6qrXoKso2A7S+F21mErepOC68NGgAmudgiyji8cnKXtUfrayi00VymsPqWvcTNA32mQAVTnQe4dADiWIANC7f4Pzs3CQjBybc4AAAAASUVORK5CYII=" alt=""><span>Dinesh Kumar</span></a>
+  <small>© <span id="year"></span> Dinesh Kumar. All rights reserved.</small>
+  <a class="social" href="https://www.instagram.com/dineshkumarart/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+ </div>
+</footer>
+<script>
+const toggle=document.querySelector('.menu-toggle');
+const links=document.querySelector('.navlinks');
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰';});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
